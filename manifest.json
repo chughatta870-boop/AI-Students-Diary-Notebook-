@@ -1,0 +1,47 @@
+{
+  "name": "AI Student Diary & Note Book",
+  "short_name": "StudentDiary",
+  "description": "Student ka Note, Homework aur Lesson save karein. Teacher dashboard, Edit, Delete, Save, Share, Download aur Remarks ke saath. By M Ijaz GHS 124NB",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen"],
+  "background_color": "#e8f5e9",
+  "theme_color": "#2e7d32",
+  "orientation": "portrait",
+  "scope": "./",
+  "lang": "ur-PK",
+  "dir": "rtl",
+  "categories": ["education", "productivity", "utilities"],
+  "iarc_rating_id": "eec0a4e1-f18f-4c3e-aa4e-1c3c1d4a9c0a",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Student Mode - Note Likhein"
+    },
+    {
+      "src": "screenshot2.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Teacher Dashboard - Remarks"
+    }
+  ]
+}
