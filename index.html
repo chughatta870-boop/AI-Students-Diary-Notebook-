@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ur-PK" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#2e7d32">
+  <meta name="description" content="AI Student Diary aur Note Book. Student ka Note, Homework save karein. Teacher dashboard, Edit, Delete, Save, Share, Download aur Remarks ke saath. By M Ijaz GHS 124NB">
+  <meta name="keywords" content="student diary, note book, teacher, homework, pakistan, education, M Ijaz GHS 124NB">
+  <meta name="author" content="M Ijaz GHS 124NB">
+  
+  <!-- PWA Tags -->
+  <title>AI Student Diary & Note Book</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png"> <!-- iPhone ke liye -->
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📓 AI Student Diary & Note Book</h1>
+    <p>Watermark: <b>M Ijaz GHS 124NB</b></p>
+  </header>
+
+  <div class="mode-switch">
+    <button id="studentMode" class="mode-btn active">👨‍🎓 Student Mode</button>
+    <button id="teacherMode" class="mode-btn">👨‍🏫 Teacher Dashboard</button>
+  </div>
+
+  <!-- STUDENT MODE -->
+  <main id="studentPanel">
+    <section class="card">
+      <h2>Student Info</h2>
+      <input type="text" id="studentName" placeholder="Student ka Naam" required>
+      <input type="text" id="rollNo" placeholder="Roll No / Class">
+      <select id="subject" required>
+        <option value="">Subject Select karein</option>
+        <option>Urdu</option><option>English</option><option>Math</option>
+        <option>Science</option><option>SST</option><option>Islamiat</option>
+      </select>
+    </section>
+
+    <section class="card">
+      <h2>Nayi Note / Homework Likhein</h2>
+      <input type="date" id="noteDate" required>
+      <input type="text" id="noteTitle" placeholder="Title: Maslan 'Fasl 1 ke Sawal'" required>
+      <textarea id="noteContent" rows="6" placeholder="Note, Homework ya Lesson yahan likhein..." required></textarea>
+      <div class="btn-group">
+        <button id="saveBtn">💾 Save Note</button>
+        <button id="downloadBtn">📥 Download TXT</button>
+        <button id="shareBtn">📤 Share</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📖 Meri Student Diary</h2>
+      <input type="month" id="filterMonth" style="margin-bottom:10px;">
+      <div id="diaryList"></div>
+    </section>
+  </main>
+
+  <!-- TEACHER DASHBOARD -->
+  <main id="teacherPanel" style="display:none;">
+    <section class="card">
+      <h2>👨‍🏫 Teacher Dashboard</h2>
+      <p>Students ki Notes check karke remarks dein</p>
+      <input type="text" id="searchStudent" placeholder="Student ka Naam search karein">
+    </section>
+    <div id="allNotes"></div>
+  </main>
+
+  <footer>
+    <p>© 2026 <b>M Ijaz GHS 124NB</b> - AI Powered</p>
+  </footer>
+
+  <!-- SW Register -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('SW Registered:', reg.scope))
+          .catch(err => console.log('SW Failed:', err));
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
